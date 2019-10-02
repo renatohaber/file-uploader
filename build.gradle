@@ -1,0 +1,36 @@
+buildscript {
+	ext {
+		springBootVersion = '2.1.8.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.github.renatohaber.web.fileuploader'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile("org.springframework.boot:spring-boot-starter-web")
+	compile("org.springframework:spring-test:5.1.9.RELEASE")
+	compile("org.springframework.boot:spring-boot-starter:${springBootVersion}")
+	compile("org.springframework.boot:spring-boot-parent:${springBootVersion}")
+	compile("org.apache.commons:commons-lang3:3.3.2")
+	compile("io.springfox:springfox-swagger2:2.7.0")
+	compile("io.springfox:springfox-swagger-ui:2.7.0")
+	testImplementation('org.springframework.boot:spring-boot-starter-test')
+	testCompile("junit:junit")
+
+}
